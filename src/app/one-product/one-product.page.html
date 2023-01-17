@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button routerLink="/"><ion-icon name="home"></ion-icon></ion-button>
+    <ion-title>oneProduct</ion-title>
+    <ion-button slot="end" [routerLink]="['/edit-product', product.id]"><ion-icon name="create-outline"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img alt={{product.title}} src={{product.picture}} />
+    <ion-card-header>
+      <ion-card-title>{{product.title}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{product.description}}
+    </ion-card-content>
+  </ion-card>gi
+</ion-content>
