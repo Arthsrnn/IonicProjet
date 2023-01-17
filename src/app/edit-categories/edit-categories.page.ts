@@ -16,7 +16,7 @@ export class EditCategoriesPage implements OnInit {
   categories:any;
   constructor(private http: HttpClient, private router: Router, private route:ActivatedRoute, private cm: AppModule) {
 
-    this.p= this.http.post('http://localhost:8100/marmiton_1/src/categories.php?action=getone', JSON.stringify({'id':this.route.snapshot.paramMap.get('id')})).toPromise().then((response: any)=>{console.log(this.categories=response); });
+    this.p= this.http.post('http://localhost/marmiton_1/src/categories.php?action=getone', JSON.stringify({'id':this.route.snapshot.paramMap.get('id')})).toPromise().then((response: any)=>{console.log(this.categories=response); });
     this.categories=this.cm.waitFor(this.p);
   }
 
@@ -24,7 +24,7 @@ export class EditCategoriesPage implements OnInit {
 
   editCategories(f: NgForm)
   {
-    this.http.post('http://localhost:8200/marmiton_1/src/categories.php?action=edit', JSON.stringify(f.value)).toPromise().then((response: any)=>{console.log(response); });
+    this.http.post('http://localhost/marmiton_1/src/categories.php?action=edit', JSON.stringify(f.value)).toPromise().then((response: any)=>{console.log(response); });
 
     this.router.navigate(['categories-list'])
     this.ngOnInit();

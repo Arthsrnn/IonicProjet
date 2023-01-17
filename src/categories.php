@@ -23,9 +23,7 @@ if ($_GET['action'] == 'edit') {
 
   echo json_encode($data);
 
-
 }
-
 
 if ($_GET['action'] == 'getall') {
   $query = $pdo->prepare("SELECT * FROM categories");
